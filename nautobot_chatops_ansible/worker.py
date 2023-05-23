@@ -245,7 +245,7 @@ def run_job_template(dispatcher, template_name):
     response = tower.run_tower_template(dispatcher=dispatcher, template_name=template_name)
     job_id = response["id"]
     dispatcher.send_markdown(
-        f"Hey {dispatcher.user_mention()}, Job template {template_name} has been submitted, job ID is {job_id}"
+        f"Okay, {dispatcher.user_mention()}! Running '{template_name}' using AWX. Job ID is {job_id} 🚀"
     )
     dispatcher.send_markdown(f"{TOWER_URI}/#/jobs/playbook/{job_id}")
     return True
